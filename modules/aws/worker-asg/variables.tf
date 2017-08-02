@@ -68,6 +68,36 @@ variable "root_volume_iops" {
   description = "The amount of provisioned IOPS for the root block device."
 }
 
+variable "ebs_volume_count" {
+  type        = "string"
+  default     = "6"
+  description = "The number of additional EBS volumes for worker nodes"
+}
+
+variable "ebs_volume_type" {
+  type        = "string"
+  default     = "gp2"
+  description = "The type of volume for the ebs block device."
+}
+
+variable "ebs_volume_size" {
+  type        = "string"
+  default     = "100"
+  description = "The size of the volume in gigabytes for the ebs block device."
+}
+
+variable "ebs_volume_iops" {
+  type        = "string"
+  default     = "100"
+  description = "The amount of provisioned IOPS for the ebs block device."
+}
+
+variable "ebs_device_name" {
+      type    = "string"
+      description = "The name of the ebs block device"
+      default = "/dev/xvdb"
+}
+
 variable "worker_iam_role" {
   type        = "string"
   default     = ""

@@ -177,3 +177,63 @@ resource "aws_security_group_rule" "worker_ingress_services_from_console" {
   from_port = 32000
   to_port   = 32767
 }
+
+resource "aws_security_group_rule" "worker_ingress_portworx_mgmt" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.worker.id}"
+
+  protocol  = "tcp"
+  from_port = 9001
+  to_port   = 9001
+  self      = true
+}
+
+resource "aws_security_group_rule" "worker_ingress_portworx_gossip" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.worker.id}"
+
+  protocol  = "tcp"
+  from_port = 9002
+  to_port   = 9002
+  self      = true
+}
+
+resource "aws_security_group_rule" "worker_ingress_portworx_data" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.worker.id}"
+
+  protocol  = "tcp"
+  from_port = 9003
+  to_port   = 9003
+  self      = true
+}
+
+resource "aws_security_group_rule" "worker_ingress_portworx_object" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.worker.id}"
+
+  protocol  = "tcp"
+  from_port = 9010
+  to_port   = 9010
+  self      = true
+}
+
+resource "aws_security_group_rule" "worker_ingress_portworx_namespace" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.worker.id}"
+
+  protocol  = "tcp"
+  from_port = 9012
+  to_port   = 9012
+  self      = true
+}
+
+resource "aws_security_group_rule" "worker_ingress_portworx_diags" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.worker.id}"
+
+  protocol  = "tcp"
+  from_port = 9014
+  to_port   = 9014
+  self      = true
+}

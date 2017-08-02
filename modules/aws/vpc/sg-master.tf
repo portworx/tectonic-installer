@@ -48,6 +48,7 @@ resource "aws_security_group_rule" "master_ingress_http" {
   to_port     = 80
 }
 
+
 resource "aws_security_group_rule" "master_ingress_https" {
   type              = "ingress"
   security_group_id = "${aws_security_group.master.id}"
@@ -56,6 +57,16 @@ resource "aws_security_group_rule" "master_ingress_https" {
   cidr_blocks = ["0.0.0.0/0"]
   from_port   = 443
   to_port     = 443
+}
+
+resource "aws_security_group_rule" "master_ingress_portworx_lighthouse" {
+  type              = "ingress"
+  security_group_id = "${aws_security_group.master.id}"
+
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+  from_port   = 30062
+  to_port     = 30062
 }
 
 resource "aws_security_group_rule" "master_ingress_heapster" {
