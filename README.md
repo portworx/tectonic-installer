@@ -17,16 +17,26 @@ Checkout the [ROADMAP](ROADMAP.md) for details on where the project is headed.
 
 ## Portworx Specific changes
 
+The goal if this fork is to install Kubernetes on "Portworx-ready" cluster, via Tectonic.
+
 Follow this guide exactly as is, except for ...
 
 * Update the  .terraformrc with something like this:
 
 ```
      providers {
-            matchbox = "<Your Path To>/portworx/tectonic-installer/darwin/installer-TFSPACE-matchbox
+            matchbox = "<Your Path To>/portworx/tectonic-installer/darwin/installer-TFSPACE-matchbox"
      }
 ```
 
+* Be sure to set PLATFORM, CLUSTER, AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY in your environment
+```
+mkdir -p build/${CLUSTER}
+cp examples/terraform.tfvars.aws build/demo/terraform.tfvars
+< update terraform.tfvars for your environment >
+```
+
+* export KUBECONFIG=./build/${CLUSTER}/generated/auth/kubeconfig
 
 
 ## Getting Started
