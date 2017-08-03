@@ -46,7 +46,7 @@ Then get the Tectonic Installer source code:
 
 ```
 go get github.com/portworx/tectonic-installer
-cd $(go env GOPATH)/src/github.com/coreos/tectonic-installer
+cd $(go env GOPATH)/src/github.com/portworx/tectonic-installer
 ```
 
 **Terraform**
