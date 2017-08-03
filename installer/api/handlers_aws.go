@@ -18,7 +18,8 @@ import (
 	"github.com/aws/aws-sdk-go/service/route53"
 	"github.com/aws/aws-sdk-go/service/route53domains"
 
-	paws "github.com/coreos/tectonic-installer/installer/pkg/aws"
+	// paws "github.com/coreos/tectonic-installer/installer/pkg/aws"
+	paws "github.com/portworx/tectonic-installer/installer/pkg/aws"
 )
 
 type labelValue struct {

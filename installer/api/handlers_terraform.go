@@ -10,8 +10,10 @@ import (
 	"github.com/dghubble/sessions"
 	"github.com/kardianos/osext"
 
-	"github.com/coreos/tectonic-installer/installer/pkg/tectonic"
-	"github.com/coreos/tectonic-installer/installer/pkg/terraform"
+	// "github.com/coreos/tectonic-installer/installer/pkg/tectonic"
+	// "github.com/coreos/tectonic-installer/installer/pkg/terraform"
+	"github.com/portworx/tectonic-installer/installer/pkg/tectonic"
+	"github.com/portworx/tectonic-installer/installer/pkg/terraform"
 )
 
 const (

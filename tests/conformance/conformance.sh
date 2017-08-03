@@ -1,7 +1,8 @@
 #!/bin/bash
 set -exo pipefail
 
-PROJECT=/go/src/github.com/coreos/tectonic-installer
+# PROJECT=/go/src/github.com/coreos/tectonic-installer
+PROJECT=/go/src/github.com/portworx/tectonic-installer
 
 export PLATFORM=aws
 export CLUSTER="tf-${PLATFORM}-${BUILD_ID}"

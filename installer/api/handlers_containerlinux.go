@@ -6,7 +6,8 @@ import (
 
 	"github.com/coreos/go-semver/semver"
 
-	"github.com/coreos/tectonic-installer/installer/pkg/containerlinux"
+	// "github.com/coreos/tectonic-installer/installer/pkg/containerlinux"
+	"github.com/portworx/tectonic-installer/installer/pkg/containerlinux"
 )
 
 const (

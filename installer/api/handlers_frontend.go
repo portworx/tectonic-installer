@@ -9,7 +9,8 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 
-	"github.com/coreos/tectonic-installer/installer/assets"
+	// "github.com/coreos/tectonic-installer/installer/assets"
+	"github.com/portworx/tectonic-installer/installer/assets"
 )
 
 func frontendHandler(assetDir string, platforms []string, devMode bool) http.Handler {

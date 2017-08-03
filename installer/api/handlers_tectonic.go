@@ -19,7 +19,8 @@ import (
 
 	"os"
 
-	"github.com/coreos/tectonic-installer/installer/pkg/terraform"
+        // "github.com/coreos/tectonic-installer/installer/pkg/terraform"
+	"github.com/portworx/tectonic-installer/installer/pkg/terraform"
 	"github.com/dghubble/sessions"
 )
 

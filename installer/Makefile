@@ -8,7 +8,8 @@ MATCHBOX_ASSETS_PATH=/tmp/assets
 MATCHBOX_IMAGES_PATH=/tmp/images
 MATCHBOX_OPTS=-data-path=$(MATCHBOX_IMAGES_PATH) -assets-path=$(MATCHBOX_ASSETS_PATH) -cert-file=$(TLS_CERTS)/server.crt -key-file=$(TLS_CERTS)/server.key -ca-file=$(TLS_CERTS)/ca.crt
 COREOS_VERSION=1353.8.0
-REPO=github.com/coreos/tectonic-installer/installer
+# REPO=github.com/coreos/tectonic-installer/installer
+REPO=github.com/portworx/tectonic-installer/installer
 
 # Wrapper around find. Works with filenamess containing spaces.
 find=$(shell [ -d $(1) ] && find $(1) -type f $(2) | sed 's/ /\\ /g')
@@ -114,7 +115,8 @@ launch-installer:
 .PHONY: launch-matchbox
 launch-matchbox:
 	./scripts/add_matchbox_hosts.sh
-	mkdir -p $(MATCHBOX_IMAGES_PATH) $(MATCHBOX_ASSETS_PATH)/coreos/$(COREOS_VERSION)
+	# mkdir -p $(MATCHBOX_IMAGES_PATH) $(MATCHBOX_ASSETS_PATH)/coreos/$(COREOS_VERSION)
+	mkdir -p $(MATCHBOX_IMAGES_PATH) $(MATCHBOX_ASSETS_PATH)/portworx/$(COREOS_VERSION)
 	/usr/local/bin/matchbox $(MATCHBOX_OPTS) & echo $$! > /tmp/matchbox.pid
 
 .PHONY: launch-aws-installer-guitests
@@ -135,7 +137,8 @@ gui-aws-tests-cleanup: gui-tests-cleanup
 .PHONY: gui-baremetal-tests-cleanup
 gui-baremetal-tests-cleanup: gui-tests-cleanup
 	kill `cat /tmp/matchbox.pid`
-	rm -fr $(MATCHBOX_IMAGES_PATH) $(MATCHBOX_ASSETS_PATH)/coreos/$(COREOS_VERSION)
+	# rm -fr $(MATCHBOX_IMAGES_PATH) $(MATCHBOX_ASSETS_PATH)/coreos/$(COREOS_VERSION)
+	rm -fr $(MATCHBOX_IMAGES_PATH) $(MATCHBOX_ASSETS_PATH)/portworx/$(COREOS_VERSION)
 
 .PHONY: clean
 clean:

@@ -9,7 +9,8 @@ RUN apt-get update \
 # Install Terraform
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip | funzip > /usr/local/bin/terraform && chmod +x /usr/local/bin/terraform
 
-ENV PROJECT_DIR /go/src/github.com/coreos/tectonic-installer
+# ENV PROJECT_DIR /go/src/github.com/coreos/tectonic-installer
+ENV PROJECT_DIR /go/src/github.com/portworx/tectonic-installer
 
 ADD Makefile $PROJECT_DIR/
 ADD config.tf $PROJECT_DIR/

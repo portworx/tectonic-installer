@@ -1,4 +1,5 @@
-package: github.com/coreos/tectonic-installer/installer
+# package: github.com/coreos/tectonic-installer/installer
+package: github.com/portworx/tectonic-installer/installer
 import:
 - package: github.com/aws/aws-sdk-go
   version: v1.8.13
@@ -13,7 +14,8 @@ import:
   version: bd40a432e4c76585ef6b72d3fd96fb9b6dc7b68d
 - package: github.com/cloudfoundry-incubator/candiedyaml
   version: 99c3df83b51532e3615f851d8c2dbb638f5313bf
-- package: github.com/coreos/matchbox
+# - package: github.com/coreos/matchbox
+- package: github.com/portworx/matchbox
   version: 43ce5c1d91b688ce863495bf2c2b7816568fdb2a
   subpackages:
   - matchbox/client
