@@ -1,4 +1,4 @@
-# Tectonic Installer
+# Tectonic Installer (Portworx Fork)
 ![Build Status](https://jenkins-tectonic-installer.prod.coreos.systems/buildStatus/icon?job=tectonic-installer/master)
 
 Tectonic is built on pure-upstream Kubernetes but has an opinion on the best way to install and run a Kubernetes cluster. This project helps you install a Kubernetes cluster the "Tectonic Way". It provides good defaults, enables install automation, and is customizable to meet your infrastructure needs.
@@ -14,6 +14,20 @@ Goals of the project:
 - HA by default (deploy all Kubernetes components HA, use etcd Operator)
 
 Checkout the [ROADMAP](ROADMAP.md) for details on where the project is headed.
+
+## Portworx Specific changes
+
+Follow this guide exactly as is, except for ...
+
+* Update the  .terraformrc with something like this:
+
+```
+     providers {
+            matchbox = "<Your Path To>/portworx/tectonic-installer/darwin/installer-TFSPACE-matchbox
+     }
+```
+
+
 
 ## Getting Started
 
