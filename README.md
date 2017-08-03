@@ -45,7 +45,7 @@ These instructions can be used for the official stable platforms listed above, a
 Then get the Tectonic Installer source code:
 
 ```
-go get github.com/coreos/tectonic-installer
+go get github.com/portworx/tectonic-installer
 cd $(go env GOPATH)/src/github.com/coreos/tectonic-installer
 ```
 
